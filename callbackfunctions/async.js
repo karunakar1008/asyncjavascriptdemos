@@ -1,12 +1,36 @@
-window.onload=function(){
+window.onload = function () {
 
-    var fruits=["banana","pears","apple"]
+    $.ajax({
+        type: "GET",
+        url: "data/tweets.json",
+        success: function (data) {
+            console.log(data);
 
-    function cb(val){
-        console.log(val);
-    };
-   $.get("data/tweets.json",cb);
+            $.ajax({
+                type: "GET",
+                url: "data/friends.json",
+                success: function (data) {
+                    console.log(data);
 
-   this.console.log("this print before");
+                    $.ajax({
+                        type: "GET",
+                        url: "data/videos.json",
+                        success: function (data) {
+                            console.log(data);
+                        },
+                        error: function (jqXHR, textStatus, error) {
+                            console.log(error);
+                        }
+                    });
+                },
+                error: function (jqXHR, textStatus, error) {
+                    console.log(error);
+                }
+            });
+        },
+        error: function (jqXHR, textStatus, error) {
+            console.log(error);
+        }
+    });
 
 };
