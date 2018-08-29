@@ -2,7 +2,8 @@ window.onload=function(){
 
     var fruits=["banana","pears","apple"]
 
-    fruits.forEach(function(val){
+    function callback(val){
         console.log(val);
-    })
+    };
+    fruits.forEach(callback);
 };
