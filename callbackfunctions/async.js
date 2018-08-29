@@ -6,4 +6,5 @@ window.onload=function(){
         console.log(val);
     };
     fruits.forEach(callback);
+    console.log("DOne....")
 };
