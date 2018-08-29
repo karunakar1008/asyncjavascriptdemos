@@ -2,9 +2,11 @@ window.onload=function(){
 
     var fruits=["banana","pears","apple"]
 
-    function callback(val){
+    function cb(val){
         console.log(val);
     };
-    fruits.forEach(callback);
-    console.log("DOne....")
+   $.get("data/tweets.json",cb);
+
+   this.console.log("this print before");
+
 };
