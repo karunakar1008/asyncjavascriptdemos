@@ -9,9 +9,9 @@ window.onload = function () {
         }
     };
 
-    http.open("GET", "data/tweets.json", true);
+    http.open("GET", "data/tweets.json", false);
     http.send();
-    console.log("Test......");
+    console.log("Testdddddddd");
 };
 
 /*
